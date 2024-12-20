@@ -76,7 +76,7 @@ os.makedirs(DOWNLOAD_FOLDER, exist_ok=True)
 logging.basicConfig(level=logging.DEBUG)
 
 
-@app.route('/convert', methods=['POST', 'OPTIONS'])
+@app.route('/convert', methods=['POST', 'GET', 'OPTIONS'])
 def convert_video():
     if request.method == 'OPTIONS':
         # Réponse pour les requêtes préliminaires CORS
