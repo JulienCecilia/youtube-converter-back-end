@@ -76,15 +76,12 @@ os.makedirs(DOWNLOAD_FOLDER, exist_ok=True)
 logging.basicConfig(level=logging.DEBUG)
 
 
-@app.route('/convert', methods=['POST', 'GET', 'OPTIONS'])
+@app.route('/convert', methods=['POST', 'GET'])
 def convert_video():
-    if request.method == 'OPTIONS':
-        # Réponse pour les requêtes préliminaires CORS
-        response = app.response_class()
-        response.headers['Access-Control-Allow-Origin'] = '*'
-        response.headers['Access-Control-Allow-Methods'] = 'POST, OPTIONS'
-        response.headers['Access-Control-Allow-Headers'] = 'Content-Type'
-        return response, 200
+    
+
+    if request.method == 'GET':
+        return jsonify({"message": "Utilisez POST pour soumettre des données."})
 
     # Logique existante pour la conversion
     try:
