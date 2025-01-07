@@ -32,6 +32,7 @@ def convert_video():
 
         # Options pour yt-dlp avec cookies
         ydl_opts = {
+            'listformats': True,
             'format': 'bestaudio/best',
             'postprocessors': [{
                 'key': 'FFmpegExtractAudio',
